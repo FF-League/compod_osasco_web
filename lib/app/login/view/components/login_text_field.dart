@@ -13,15 +13,17 @@ class LoginTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textAlign: TextAlign.center,
       style: LoginLabel.loginStyle.copyWith(fontSize: 12.0),
       obscureText: type == LoginTextFieldType.password,
       onChanged: (v) => LoginTextFieldType.email == type ? controller.email.value = v : controller.pass.value = v,
       enableSuggestions: false,
       autocorrect: false,
       maxLength: 128,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (v) {
         if (v?.isBlank ?? true) return 'Este campo não pode estar vazio';
-        if (type == LoginTextFieldType.email && !v!.contains('@')) return 'Insira um e-mail válido';
+        if (type == LoginTextFieldType.email && (!v!.contains('@') || !v!.contains('.'))) return 'Insira um e-mail válido';
         return null;
       },
     );
