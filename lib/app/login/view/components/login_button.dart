@@ -7,9 +7,14 @@ class LoginButton extends MaterialButton {
 
   LoginButton({required LoginController controller, required this.key})
       : super(
+          height: 48.0,
+          minWidth: 128.0,
           onPressed: () {
             if (key.currentState?.validate() ?? false) controller.login();
           },
-          child: Text('Login', style: LoginLabel.loginStyle.copyWith(color: Colors.cyanAccent),),
+          child: Text(
+            'Entrar',
+            style: LoginLabel.loginStyle
+          ),
         );
 }
