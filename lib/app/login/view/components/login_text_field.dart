@@ -15,7 +15,7 @@ class LoginTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       textAlign: TextAlign.center,
-      style: LoginLabel.loginStyle.copyWith(fontSize: 12.0),
+      style: LoginLabel.loginStyle.copyWith(fontSize: 16.0),
       obscureText: type == LoginTextFieldType.password,
       onChanged: (v) => LoginTextFieldType.email == type ? controller.email.value = v : controller.pass.value = v,
       enableSuggestions: false,

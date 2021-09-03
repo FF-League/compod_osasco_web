@@ -27,7 +27,7 @@ class LoginView extends GetView {
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    LoginLabel('E-mail'),
+                    LoginLabel('Conta'),
                     LoginTextField(type: LoginTextFieldType.email),
                     LoginLabel('Senha'),
                     LoginTextField(type: LoginTextFieldType.password),
