@@ -2,7 +2,6 @@ import 'package:compod_osasco_web/app/login/controller/login_controller.dart';
 import 'package:compod_osasco_web/app/login/view/components/login_label.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class LoginTextField extends StatelessWidget {
@@ -20,12 +19,10 @@ class LoginTextField extends StatelessWidget {
       onChanged: (v) => LoginTextFieldType.email == type ? controller.email.value = v : controller.pass.value = v,
       enableSuggestions: false,
       autocorrect: false,
-      maxLength: 128,
-      maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (v) {
         if (v?.isBlank ?? true) return 'Este campo não pode estar vazio';
-        if (type == LoginTextFieldType.email && (!v!.contains('@') || !v!.contains('.'))) return 'Insira um e-mail válido';
+        if (type == LoginTextFieldType.email && (!v!.contains('@') || !v.contains('.'))) return 'Insira um e-mail válido';
         return null;
       },
     );

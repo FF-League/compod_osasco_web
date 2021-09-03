@@ -10,7 +10,8 @@ class LoginButton extends MaterialButton {
           height: 48.0,
           minWidth: 128.0,
           onPressed: () {
-            if (key.currentState?.validate() ?? false) controller.login();
+            // if (key.currentState?.validate() ?? false)
+              controller.login();
           },
           child: Text(
             'Entrar',
