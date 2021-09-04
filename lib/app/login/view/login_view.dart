@@ -4,6 +4,7 @@ import 'package:compod_osasco_web/app/login/view/components/login_label.dart';
 import 'package:compod_osasco_web/app/login/view/components/login_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginView extends GetView {
   final c = Get.put(LoginController());
@@ -14,13 +15,13 @@ class LoginView extends GetView {
     return Scaffold(
       backgroundColor: Colors.indigo.shade900,
       appBar: AppBar(
-        title: Text('COMPOD OSASCO ADMIN'),
+        title: Text('COMPOD OSASCO ADMIN', style: GoogleFonts.palanquinDark(fontSize: 24.0)),
       ),
       body: Center(
         child: Card(
           elevation: 6.0,
           child: Container(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(32.0),
             height: 400,
             width: 600,
             child: Form(

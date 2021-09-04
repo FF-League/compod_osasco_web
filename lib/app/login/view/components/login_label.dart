@@ -1,8 +1,8 @@
-import 'package:compod_osasco_web/commons/app_fonts.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginLabel extends Text {
-  static const loginStyle = TextStyle(fontFamily: Palanquin, fontSize: 16.0);
+  static final loginStyle = GoogleFonts.palanquin(fontSize: 16.0);
 
   LoginLabel(String data) : super(data, style: loginStyle);
 }
