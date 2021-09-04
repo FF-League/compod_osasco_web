@@ -30,7 +30,7 @@ class DatabaseView extends GetView {
                 child: Obx(() => ListView.builder(
                     itemCount: controller.items.length,
                     itemBuilder: (BuildContext context, index) =>
-                        FormsItemWidget(item: controller.items[index], color: index % 2 == 0 ? Colors.blue.shade300 : Colors.blue.shade500 ,)))),
+                        FormsItemWidget(item: controller.items.values.toList(growable: false)[index], color: index % 2 == 0 ? Colors.blue.shade300 : Colors.blue.shade500 ,)))),
           ],
         ),
       ),

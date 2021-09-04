@@ -2,6 +2,7 @@
 class FormItemModel {
   String id = '';
   bool viewed = false;
+  bool isOpen = false;
   String address = '';
   String email = '';
   String job = '';
@@ -9,7 +10,9 @@ class FormItemModel {
   String sex = '';
   String treatment = '';
   String text = '';
-  DateTime birthdate = DateTime.now();
+  String phone = '';
+  int age = 0;
+  DateTime receivedDate = DateTime.now();
 
   toMap() => {
         'id': id,
@@ -20,8 +23,10 @@ class FormItemModel {
         'name': name,
         'sex': sex,
         'text': text,
+        'phone': phone,
         'treatment': treatment,
-        'birthdate': birthdate.toString(),
+        'age': age,
+        'receivedDate': receivedDate.toString(),
       };
 
   FormItemModel.fromJson(Map<String, dynamic> json, String id)
@@ -32,7 +37,14 @@ class FormItemModel {
         name = json['name'] ?? '',
         sex = json['sex'] ?? '',
         text = json['text'] ?? '',
+        phone = json['phone'] ?? '',
         treatment = json['treatment'] ?? '',
-        birthdate = json['birthdate'] != null ? DateTime.parse(json['birthdate']) : DateTime.now(),
+        age = json['age'] ?? 0,
+        receivedDate = json['receivedDate'] != null ? DateTime.parse(json['receivedDate']) : DateTime.now(),
         viewed = json['viewed'] ?? false;
+
+  @override
+  String toString() {
+    return 'FormItemModel{id: $id, viewed: $viewed, address: $address, email: $email, job: $job, name: $name, sex: $sex, treatment: $treatment, text: $text, age: $age, receivedDate: $receivedDate}';
+  }
 }

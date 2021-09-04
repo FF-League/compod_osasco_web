@@ -50,17 +50,17 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
                   children: [
                     Row(
                       children: [
-                        FormsItemWidgetLabel(text: widget.item.birthdate.toString()),
-                        FormsItemWidgetLabel(text: widget.item.name),
-                        FormsItemWidgetLabel(text: widget.item.email),
-                        FormsItemWidgetLabel(text: widget.item.treatment),
+                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.receivedDate),
+                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.name),
+                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.email),
+                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.treatment),
                       ],
                     ),
                     FormsItemWidgetArrow(isOpen: isOpen)
                   ],
                 ),
               ),
-              Expanded(child: FormsItemWidgetDescription(duration: _duration, isOpen: isOpen, height: FormsItemWidget._textHeight, content: widget.item.text))
+              Expanded(child: FormsItemWidgetDescription(isOpen: isOpen, content: widget.item))
             ],
           ),
         ),
