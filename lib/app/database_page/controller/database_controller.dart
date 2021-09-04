@@ -15,6 +15,12 @@ class DatabaseController extends GetxController {
     await collection.doc(id.toString()).set(item.toMap());
   }
 
+
+  @override
+  void onReady() {
+    fetchData();
+  }
+
   void fetchData() async {
     items.clear();
     collection.snapshots().forEach((element) {

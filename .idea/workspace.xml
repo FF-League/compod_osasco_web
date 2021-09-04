@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b0c91273-1f36-4a15-b57d-5bf5bdc422d0" name="Default Changelist" comment="">
       <changelist_data name="" email="" />
+      <change afterPath="$PROJECT_DIR$/lib/app/database_page/view/components/forms_item_widget_components/forms_item_widget_arrow.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/database_page/view/components/forms_item_widget_components/forms_item_widget_description.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/database_page/view/components/forms_item_widget_components/forms_item_widget_label.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/database_page/view/components/forms_item_widget_components/forms_item_widget_shell.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/database_page/controller/database_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/database_page/controller/database_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/database_page/view/components/forms_item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/database_page/view/components/forms_item_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/database_page/view/database_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/database_page/view/database_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +64,13 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Dart" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\codes\compod_osasco_web\lib\app\database_page\view\components\forms_item_widget_components" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
