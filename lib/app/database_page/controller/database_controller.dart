@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:compod_osasco_web/app/database_page/model/form_item_model.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DatabaseController extends GetxController {
@@ -21,6 +20,6 @@ class DatabaseController extends GetxController {
     collection.snapshots().forEach((element) {
       final item = element.docs.first;
       items.add(FormItemModel.fromJson(item.data(), item.id));
-    }).then((value) => print(items));
+    });
   }
 }

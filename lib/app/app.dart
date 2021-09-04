@@ -1,4 +1,3 @@
-import 'package:compod_osasco_web/app/database_page/view/database_view.dart';
 import 'package:compod_osasco_web/app/login/view/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +13,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.indigo,
         accentColor: Colors.greenAccent,
       ),
-      home: DatabaseView(),
+      home: LoginView(),
     );
   }
 }
