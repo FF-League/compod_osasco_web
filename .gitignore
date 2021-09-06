@@ -22,3 +22,4 @@ doc/api/
 
 firebase-debug.log
 .flutter-plugins-dependencies
+.idea/
