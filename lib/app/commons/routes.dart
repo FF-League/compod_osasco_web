@@ -15,5 +15,10 @@ enum Routes {
 }
 
 extension RoutesExt on Routes {
-  String get route => '/${describeEnum(this)}';
+  String get route {
+    switch (this) {
+      case Routes.home: return '/';
+      default: return '/${describeEnum(this)}';
+    }
+  }
 }

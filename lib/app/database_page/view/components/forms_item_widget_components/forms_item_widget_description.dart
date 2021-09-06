@@ -6,9 +6,12 @@ class FormsItemWidgetDescription extends Container {
   FormsItemWidgetDescription({required bool isOpen, required FormItemModel content})
       : super(
           width: double.infinity,
-          margin: EdgeInsets.all(4.0),
           padding: EdgeInsets.all(12.0),
-          decoration: BoxDecoration(color: Colors.white54, borderRadius: BorderRadius.vertical(bottom: Radius.circular(12.0))),
+          decoration: BoxDecoration(
+            color: Colors.white54,
+            border: Border.all(color: Colors.white54, width: 1.0),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(4.0), bottom: Radius.circular(12.0)),
+          ),
           child: Column(
             children: [
               Flexible(fit: FlexFit.loose, child: Container(width: double.infinity, child: Text('${content.name}, ${content.sex}, ${content.age} anos'))),

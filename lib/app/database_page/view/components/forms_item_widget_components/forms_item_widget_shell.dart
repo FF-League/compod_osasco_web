@@ -7,7 +7,7 @@ class FormsItemWidgetShell extends Container {
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(12.0),
-            boxShadow: [BoxShadow(blurRadius: 4.0, color: Colors.black45)],
+            boxShadow: [BoxShadow(blurRadius: 3.0, color: Colors.black54)],
           ),
         );
 }

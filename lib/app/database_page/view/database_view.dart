@@ -10,19 +10,19 @@ class DatabaseView extends GetView {
     final DatabaseController controller = Get.put(DatabaseController());
 
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Colors.indigo.shade900,
       body: Center(
         child: Column(
           children: [
-            Container(height: 64.0, child: Text('Dashboard', style: GoogleFonts.palanquinDark(fontSize: 32.0))),
+            Container(height: 64.0, child: Text('Dashboard', style: GoogleFonts.palanquinDark(fontSize: 32.0, color: Colors.white))),
             Container(
                 decoration: BoxDecoration(
                   color: Colors.blue.shade100,
                   boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 5.0)],
-                  borderRadius: BorderRadius.circular(24.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 constraints: BoxConstraints(
-                  maxWidth: context.width,
+                  maxWidth: 820.0,
                   maxHeight: context.height - 128.0,
                 ),
                 margin: EdgeInsets.all(32.0),

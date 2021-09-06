@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:compod_osasco_web/app/commons/routes.dart';
+import 'package:compod_osasco_web/app/commons/storage.dart';
 import 'package:compod_osasco_web/app/database_page/model/form_item_model.dart';
 import 'package:get/get.dart';
 
@@ -29,9 +31,13 @@ class DatabaseController extends GetxController {
   }
 
   void fetchData() async {
-    collection.snapshots().forEach((element) {
-      final item = element.docs.first;
-      items[item.id] = FormItemModel.fromJson(item.data(), item.id);
-    });
+    if (Storage.box.read('token') == null) {
+      Get.offAllNamed(Routes.home.route);
+    } else {
+      collection.snapshots().forEach((element) {
+        final item = element.docs.first;
+        items[item.id] = FormItemModel.fromJson(item.data(), item.id);
+      });
+    }
   }
 }

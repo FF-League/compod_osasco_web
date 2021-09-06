@@ -17,6 +17,7 @@ class LoginTextField extends StatelessWidget {
       obscureText: type == LoginTextFieldType.password,
       onChanged: (v) => LoginTextFieldType.email == type ? controller.email.value = v : controller.pass.value = v,
       enableSuggestions: false,
+      onFieldSubmitted: (_) => controller.login(),
       autocorrect: false,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (v) {

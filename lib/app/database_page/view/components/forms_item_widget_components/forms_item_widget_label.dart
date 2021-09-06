@@ -4,11 +4,13 @@ import 'package:intl/intl.dart';
 
 class FormsItemWidgetLabel extends Column {
   final dynamic text;
-  FormsItemWidgetLabel({required this.text, required bool viewed})
+  FormsItemWidgetLabel({required this.text, required bool viewed, double? size})
       : super(
           children: [
             Container(
-              width: 120.0,
+              constraints: BoxConstraints(
+                minWidth: size ?? 200.0
+              ),
               child: Text(
                 _convertToText(text),
                 style: viewed ? GoogleFonts.palanquin(fontSize: 16.0, height: 1.0) : GoogleFonts.palanquin(fontSize: 16.0, fontWeight: FontWeight.bold, height: 1.0)

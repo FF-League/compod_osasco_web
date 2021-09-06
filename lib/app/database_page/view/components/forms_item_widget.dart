@@ -24,7 +24,7 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
 
   var isOpen = false;
   final _padding = 12.0;
-  final _duration = Duration(milliseconds: 500);
+  final _duration = Duration(milliseconds: 300);
 
   void onPressed() {
     isOpen = !isOpen;
@@ -39,24 +39,28 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
         onPressed: onPressed,
         child: AnimatedContainer(
           duration: _duration,
-          padding: EdgeInsets.only(top: _padding, bottom: isOpen ? 0.0 : _padding),
+          padding: EdgeInsets.only(top: _padding, bottom: _padding),
           height: FormsItemWidget._height + (isOpen ? FormsItemWidget._textHeight : 0),
           child: Column(
             children: [
               AnimatedContainer(
-                height: 40.0 + (isOpen ? _padding : 0),
-                padding: EdgeInsets.symmetric(horizontal: _padding),
+                height: 40.0 ,
+                padding: EdgeInsets.all(_padding),
                 duration: _duration,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.receivedDate),
-                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.name),
-                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.email),
-                        FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.treatment),
-                      ],
+                    FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.receivedDate, size: 100.0),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.name),
+                          FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.email),
+                          FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.treatment),
+                        ],
+                      ),
                     ),
                     FormsItemWidgetArrow(isOpen: isOpen)
                   ],

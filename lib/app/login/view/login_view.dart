@@ -8,7 +8,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LoginView extends GetView {
   final c = Get.put(LoginController());
-  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +24,7 @@ class LoginView extends GetView {
             height: 400,
             width: 600,
             child: Form(
+              key: c.formKey,
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -33,7 +33,7 @@ class LoginView extends GetView {
                     LoginLabel('Senha'),
                     LoginTextField(type: LoginTextFieldType.password),
                     SizedBox(height: 16.0),
-                    LoginButton(controller: c, key: formKey)
+                    LoginButton(onPressed: c.login)
                   ]),
             ),
           ),
