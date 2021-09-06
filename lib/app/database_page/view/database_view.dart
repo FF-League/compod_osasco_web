@@ -14,7 +14,7 @@ class DatabaseView extends GetView {
       body: Center(
         child: Column(
           children: [
-            Container(height: 64.0,child: Text('Forms', style: GoogleFonts.palanquinDark(fontSize: 32.0))),
+            Container(height: 64.0, child: Text('Dashboard', style: GoogleFonts.palanquinDark(fontSize: 32.0))),
             Container(
                 decoration: BoxDecoration(
                   color: Colors.blue.shade100,

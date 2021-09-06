@@ -26,15 +26,17 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
   final _padding = 12.0;
   final _duration = Duration(milliseconds: 500);
 
+  void onPressed() {
+    isOpen = !isOpen;
+    controller.onClick(widget.item.id);
+  }
+
   @override
   Widget build(BuildContext context) {
     return FormsItemWidgetShell(
       color: widget.color,
       child: MaterialButton(
-        onPressed: () {
-          isOpen = !isOpen;
-          controller.onClick(widget.item.id);
-        },
+        onPressed: onPressed,
         child: AnimatedContainer(
           duration: _duration,
           padding: EdgeInsets.only(top: _padding, bottom: isOpen ? 0.0 : _padding),

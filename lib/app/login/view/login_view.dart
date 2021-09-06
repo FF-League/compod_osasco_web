@@ -32,6 +32,7 @@ class LoginView extends GetView {
                     LoginTextField(type: LoginTextFieldType.email),
                     LoginLabel('Senha'),
                     LoginTextField(type: LoginTextFieldType.password),
+                    SizedBox(height: 16.0),
                     LoginButton(controller: c, key: formKey)
                   ]),
             ),

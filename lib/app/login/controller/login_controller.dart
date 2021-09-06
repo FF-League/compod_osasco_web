@@ -1,4 +1,4 @@
-import 'package:compod_osasco_web/app/database_page/view/database_view.dart';
+import 'package:compod_osasco_web/app/commons/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +11,7 @@ class LoginController extends GetxController {
         .signInWithEmailAndPassword(email: email.value, password: pass.value);
 
     futureCredential
-        .then((value) => Get.to(DatabaseView()))
+        .then((value) => Get.toNamed(Routes.dashboard.route))
         .catchError((error, stackTrace) {
       Get.defaultDialog(title: 'Erro', middleText: 'Conta não encontrada ou senha incorreta');
     });
