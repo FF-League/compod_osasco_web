@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class FormsItemWidgetShell extends Container {
   FormsItemWidgetShell({required Widget child, required Color color})
       : super(
+          margin: const EdgeInsets.symmetric(vertical: 4.0),
           child: child,
           decoration: BoxDecoration(
             color: color,

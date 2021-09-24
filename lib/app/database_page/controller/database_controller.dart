@@ -34,10 +34,14 @@ class DatabaseController extends GetxController {
     if (Storage.box.read('token') == null) {
       Get.offAllNamed(Routes.home.route);
     } else {
-      collection.snapshots().forEach((element) {
-        final item = element.docs.first;
-        items[item.id] = FormItemModel.fromJson(item.data(), item.id);
-      });
+      collection.get().then((value) => value.docs.forEach((element) {
+            items[element.id] = FormItemModel.fromJson(element.data(), element.id);
+          }));
+      //
+      // collection.snapshots().forEach((element) {
+      //   final item = element.docs.first;
+      //   items[item.id] = FormItemModel.fromJson(item.data(), item.id);
+      // });
     }
   }
 }

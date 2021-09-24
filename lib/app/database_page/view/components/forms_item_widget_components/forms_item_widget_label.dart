@@ -29,7 +29,7 @@ class FormsItemWidgetLabel extends Column {
       if (dateTime.day == today.day &&
           dateTime.month == today.month &&
           dateTime.year == today.year) {
-        return DateFormat('hh:mm').format(dateTime);
+        return DateFormat('HH:mm').format(dateTime);
       }
       return DateFormat('dd/MM/yyyy').format(dateTime);
     }

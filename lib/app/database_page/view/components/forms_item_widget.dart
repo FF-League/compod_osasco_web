@@ -39,7 +39,7 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
         onPressed: onPressed,
         child: AnimatedContainer(
           duration: _duration,
-          padding: EdgeInsets.only(top: _padding, bottom: _padding),
+          padding: EdgeInsets.symmetric(vertical: _padding),
           height: FormsItemWidget._height + (isOpen ? FormsItemWidget._textHeight : 0),
           child: Column(
             children: [
