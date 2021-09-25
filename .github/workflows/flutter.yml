@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Flutter pR
+name: Flutter Pull Requests
 
 on:
   pull_request:
