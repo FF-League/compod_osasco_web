@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FormsItemWidget extends StatefulWidget {
-  FormsItemWidget({required this.color, required this.item, Key? key}) : super(key: key);
+  const FormsItemWidget({required this.color, required this.item, Key? key}) : super(key: key);
 
   final Color color;
   final FormItemModel item;
-  static const _height = 64.0;
-  static const _textHeight = 400.0;
+  static const height = 64.0;
+  static const textHeight = 400.0;
 
   @override
   _FormsItemWidgetState createState() => _FormsItemWidgetState();
@@ -23,8 +23,8 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
   final DatabaseController controller = Get.find();
 
   var isOpen = false;
-  final _padding = 12.0;
-  final _duration = Duration(milliseconds: 300);
+  static const _padding = 12.0;
+  static const _duration = Duration(milliseconds: 300);
 
   void onPressed() {
     isOpen = !isOpen;
@@ -34,36 +34,30 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
   @override
   Widget build(BuildContext context) {
     return FormsItemWidgetShell(
-      color: widget.color,
+      color: widget.item.viewed ? widget.color : Colors.greenAccent,
       child: MaterialButton(
         onPressed: onPressed,
         child: AnimatedContainer(
           duration: _duration,
           padding: EdgeInsets.symmetric(vertical: _padding),
-          height: FormsItemWidget._height + (isOpen ? FormsItemWidget._textHeight : 0),
+          height: isOpen ? FormsItemWidget.textHeight : 0 + FormsItemWidget.height,
           child: Column(
             children: [
               AnimatedContainer(
-                height: 40.0 ,
-                padding: EdgeInsets.all(_padding),
+                height: FormsItemWidget.height - 24.0,
                 duration: _duration,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.receivedDate, size: 100.0),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.name),
-                          FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.email),
-                          FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.treatment),
-                        ],
-                      ),
-                    ),
-                    FormsItemWidgetArrow(isOpen: isOpen)
-                  ],
+                child: Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.receivedDate, size: 100.0),
+                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.name),
+                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.email),
+                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.treatment),
+                      FormsItemWidgetArrow(isOpen: isOpen)
+                    ],
+                  ),
                 ),
               ),
               Expanded(child: FormsItemWidgetDescription(isOpen: isOpen, content: widget.item))

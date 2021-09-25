@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 class DatabaseController extends GetxController {
   var items = <String, FormItemModel>{}.obs;
 
+  List<FormItemModel> get list => items.values.toList(growable: false)..sort((a, b) => b.receivedDate.compareTo(a.receivedDate));
+
   final collection = FirebaseFirestore.instance.collection('forms');
 
   Future<void> onClick(String id) async {
@@ -34,14 +36,7 @@ class DatabaseController extends GetxController {
     if (Storage.box.read('token') == null) {
       Get.offAllNamed(Routes.home.route);
     } else {
-      collection.get().then((value) => value.docs.forEach((element) {
-            items[element.id] = FormItemModel.fromJson(element.data(), element.id);
-          }));
-      //
-      // collection.snapshots().forEach((element) {
-      //   final item = element.docs.first;
-      //   items[item.id] = FormItemModel.fromJson(item.data(), item.id);
-      // });
+      collection.get().then((value) => value.docs.forEach((element) => items[element.id] = FormItemModel.fromJson(element.data(), element.id)));
     }
   }
 }

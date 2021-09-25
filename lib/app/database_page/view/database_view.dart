@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DatabaseView extends GetView {
+class DatabaseView extends GetView<DatabaseController> {
+  final DatabaseController controller = Get.put(DatabaseController());
+
   @override
   Widget build(BuildContext context) {
-    final DatabaseController controller = Get.put(DatabaseController());
-
     return Scaffold(
       backgroundColor: Colors.indigo.shade900,
       body: Center(
@@ -29,8 +29,7 @@ class DatabaseView extends GetView {
                 padding: EdgeInsets.all(12.0),
                 child: Obx(() => ListView.builder(
                     itemCount: controller.items.length,
-                    itemBuilder: (BuildContext context, index) =>
-                        FormsItemWidget(item: controller.items.values.toList(growable: false)[index], color: index % 2 == 0 ? Colors.blue.shade300 : Colors.blue.shade500 ,)))),
+                    itemBuilder: (BuildContext context, index) => FormsItemWidget(item: controller.list[index], color: index % 2 == 0 ? Colors.blue.shade300 : Colors.blue.shade500)))),
           ],
         ),
       ),
