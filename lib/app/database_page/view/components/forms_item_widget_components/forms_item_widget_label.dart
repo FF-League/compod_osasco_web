@@ -25,12 +25,10 @@ class FormsItemWidgetLabel extends GetView {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(minWidth: size ?? 200.0),
-      child: Expanded(
-        child: Text(
-          _convertToText(text),
-          textAlign: TextAlign.start,
-          style: viewed ? GoogleFonts.palanquin(fontSize: 16.0, height: 1.0) : GoogleFonts.palanquinDark(fontSize: 16.0, fontWeight: FontWeight.bold, height: 1.0),
-        ),
+      child: Text(
+        _convertToText(text),
+        textAlign: TextAlign.start,
+        style: viewed ? GoogleFonts.palanquin(fontSize: 16.0, height: 1.0) : GoogleFonts.palanquinDark(fontSize: 16.0, fontWeight: FontWeight.bold, height: 1.0),
       ),
     );
   }

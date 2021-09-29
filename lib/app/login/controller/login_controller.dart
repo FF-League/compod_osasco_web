@@ -25,8 +25,6 @@ class LoginController extends GetxController {
   void login() async {
     if (formKey.currentState?.validate() ?? false) {
       FirebaseAuth.instance.signInWithEmailAndPassword(email: email.value, password: pass.value).then((value) {
-        print(value);
-        print(value.user?.refreshToken);
         Storage.saveToken(value.user?.refreshToken);
         return Get.toNamed(Routes.dashboard.route);
       }).catchError((error, stackTrace) {

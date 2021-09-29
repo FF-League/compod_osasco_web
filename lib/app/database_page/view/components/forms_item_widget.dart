@@ -46,21 +46,19 @@ class _FormsItemWidgetState extends State<FormsItemWidget> {
               AnimatedContainer(
                 height: FormsItemWidget.height - 24.0,
                 duration: _duration,
-                child: Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.receivedDate, size: 100.0),
-                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.name),
-                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.email),
-                      FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.treatment),
-                      FormsItemWidgetArrow(isOpen: isOpen)
-                    ],
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.receivedDate, size: 100.0),
+                    FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.name),
+                    FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.email),
+                    FormsItemWidgetLabel(viewed: widget.item.viewed, text: widget.item.treatment),
+                    FormsItemWidgetArrow(isOpen: isOpen)
+                  ],
                 ),
               ),
-              Expanded(child: FormsItemWidgetDescription(isOpen: isOpen, content: widget.item))
+              FormsItemWidgetDescription(isOpen: isOpen, content: widget.item)
             ],
           ),
         ),
