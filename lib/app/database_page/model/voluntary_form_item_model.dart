@@ -1,5 +1,5 @@
 
-class FormItemModel {
+class VoluntaryFormItemModel {
   String id = '';
   bool viewed = false;
   bool isOpen = false;
@@ -29,7 +29,7 @@ class FormItemModel {
         'receivedDate': receivedDate.toString(),
       };
 
-  FormItemModel.fromJson(Map<String, dynamic> json, String id)
+  VoluntaryFormItemModel.fromJson(Map<String, dynamic> json, String id)
       : id = id,
         address = json['address'] ?? '',
         email = json['email'] ?? '',

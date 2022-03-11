@@ -1,14 +1,14 @@
-import 'package:compod_osasco_web/app/database_page/model/form_item_model.dart';
+import 'package:compod_osasco_web/app/database_page/model/voluntary_form_item_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FormsItemWidgetDescription extends GetView {
-  FormsItemWidgetDescription({required this.isOpen, required this.content});
+class VoluntaryFormsItemWidgetDescription extends GetView {
+  VoluntaryFormsItemWidgetDescription({required this.isOpen, required this.content});
 
   final bool isOpen;
-  final FormItemModel content;
+  final VoluntaryFormItemModel content;
 
   @override
   Widget build(BuildContext context) {
